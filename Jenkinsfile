@@ -11,7 +11,7 @@ pipeline {
                 }
            }
        }
-       stage(‘Testing Stage’) {
+       stage('Testing Stage') {
            steps {
                echo 'Testing Stage starts...'
                 withMaven(maven : 'maven_3_5_2'){
@@ -24,3 +24,13 @@ pipeline {
            steps {
                echo 'Install Stage starts...'
                 withMaven(maven : 'maven_3_5_2'){
+                 sh 'mvn install'
+                echo 'Install Stage ends...'
+                }
+           }
+       }
+    
+       
+       }
+   }
+}
